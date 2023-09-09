@@ -1,9 +1,6 @@
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
-const sequelize = new Sequelize('database', 'username', 'password', {
-    host: 'localhost',
-    dialect: 'postgres' // pick one of 'mysql','sqlite','postgres','mssql',
-  });
+const sequelize = new Sequelize(process.env.DATABASE_URL)
 
 module.exports = sequelize;
