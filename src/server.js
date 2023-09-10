@@ -9,7 +9,7 @@ const main = async () => {
     try {
         sequelize.sync();
         console.log("DB connected");
-        app.listen(PORT);
+        app.listen(PORT, "0.0.0.0", function(){});
         console.log(`Server running on port ${PORT}`);
     } catch (error) {
         console.log(error)
