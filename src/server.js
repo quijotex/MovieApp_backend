@@ -2,19 +2,13 @@ const app = require('./app');
 const sequelize = require('./utils/connection');
 require('./models');
 
-const PORT = process.env.PORT || 8080;
 
 
-const main = async () => {
-    try {
-        sequelize.sync();
-        console.log("DB connected");
-        app.listen(PORT);
-        console.log(`Server running on port ${PORT}`);
-    } catch (error) {
-        console.log(error)
-    }
-}
 
+// Use PORT provided in environment or default to 3000
+const port = process.env.PORT || 3000;
 
-main();
+// Listen on `port` and 0.0.0.0
+app.listen(port, "0.0.0.0", function () {
+  // ...
+});
