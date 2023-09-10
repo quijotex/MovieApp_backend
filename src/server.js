@@ -10,9 +10,9 @@ const main = async () => {
         await sequelize.authenticate();
         console.log("DB connected");
         app.listen(PORT, '0.0.0.0', function() {
-            console.log(`Server running on port ${PORT}`);
+        
         });
-    
+        console.log(`Server running on port ${PORT}`)
     } catch (error) {
         console.log(error)
     }
