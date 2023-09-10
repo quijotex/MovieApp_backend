@@ -1,11 +1,11 @@
 const { Sequelize } = require('sequelize');
-require('dotenv').config();
+
 
 let sequelize;
 if (process.env.node_env === "production") {
-  sequelize = new sequelize(process.env.database_url);
+  Sequelize = new sequelize(process.env.database_url);
 } else {
-  sequelize = new sequelize(
+  Sequelize= new sequelize(
     process.env.postgres_db || "elitypescript",
     process.env.postgres_user || "eli",
     "",
